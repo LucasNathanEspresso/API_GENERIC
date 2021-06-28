@@ -1,0 +1,224 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PortalProduto</name>
+    </assembly>
+    <members>
+        <member name="T:EfcoreSample.Controllers.ApplicationController`3">
+            <summary>
+            Generic controller for Crud Base Operations
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+            <typeparam name="TSearchDTO"></typeparam>
+            <typeparam name="TRepository"></typeparam>
+        </member>
+        <member name="M:EfcoreSample.Controllers.ApplicationController`3.Get">
+            <summary>
+            Get All Records from Table
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EfcoreSample.Controllers.ApplicationController`3.GetById(System.Int64)">
+            <summary>
+            Get Record by Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EfcoreSample.Controllers.ApplicationController`3.Put(System.Int64,`0)">
+            <summary>
+            Update a Record
+            </summary>
+            <param name="id"></param>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EfcoreSample.Controllers.ApplicationController`3.Post(`0)">
+            <summary>
+            Create a record
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EfcoreSample.Controllers.ApplicationController`3.Delete(System.Int64)">
+            <summary>
+            Delete a record from database
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EfcoreSample.Controllers.ApplicationController`3.PostSearch(`1)">
+            <summary>
+            Generic search method for cruc basic
+            </summary>
+            <param name="searchEntity"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EfcoreSample.Controllers.AuthController">
+            <summary>
+            Controller to authentication operations
+            </summary>
+        </member>
+        <member name="M:EfcoreSample.Controllers.AuthController.#ctor(Domain.BLL.Intefaces.IAuthService)">
+            <summary>
+            Constructor for Controller. Inject Auth service to use on methods
+            </summary>
+            <param name="_authService"></param>
+        </member>
+        <member name="M:EfcoreSample.Controllers.AuthController.PostAuth(Domain.Models.DTO.AuthDTO)">
+            <summary>
+            Check authentication credentials and generate token for oauth
+            </summary>
+            <param name="auth"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EfcoreSample.Controllers.AuthController.PostUserByLogin(Domain.Models.DTO.AuthDTO)">
+            <summary>
+            Find a Custommer user in database by login and return information from application to redirect to login application page.
+            </summary>
+            <param name="auth"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EfcoreSample.Controllers.AuthController.PostUserCostummerLogin(Domain.Models.DTO.AuthDTO)">
+            <summary>
+             Authenticate Custommer user and return data from user to application
+            </summary>
+            <param name="auth"></param>
+            <returns></returns>
+        </member>
+        <member name="T:EfcoreSample.Controllers.MenusController">
+            <summary>
+            Controller for Table Languages
+            </summary>
+        </member>
+        <member name="T:EfcoreSample.Controllers.ProfilesController">
+            <summary>
+            Controller for Table Profiles
+            </summary>
+        </member>
+        <member name="T:EfcoreSample.Controllers.CoreController">
+            <summary>
+            Controller to user
+            </summary>
+        </member>
+        <member name="M:EfcoreSample.Controllers.CoreController.GetMigrateDatabase(System.String)">
+            <summary>
+            Method to migrate DB Verision
+            </summary>
+            <param name="database"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EfcoreSample.Controllers.CoreController.PostEncryptValue(System.String)">
+            <summary>
+            Encrypt a value encrypted by system configured encryption method
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EfcoreSample.Controllers.CoreController.PostDecryptValue(System.String)">
+            <summary>
+            Decrypt a value encrypted by system configured encryption method
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EfcoreSample.Controllers.CoreController.PostSendEmail(EfcoreSample.Controllers.CoreController.Email)">
+            <summary>
+            Teste send email by application
+            </summary>
+            <param name="email"></param>
+            <param name="provider"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DGSoft.Gefinpes.Controllers.Interfaces.ISearchController`1">
+            <summary>
+            Interface para exigir a implmentação de um método Search no controller de crud.
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+        </member>
+        <member name="M:DGSoft.Gefinpes.Controllers.Interfaces.ISearchController`1.Search(`0)">
+            <summary>
+            O Método que será implementado deverá ser um método Post a url de acesso aos dados 'search'.
+            Deverá receber como parametro um objeto com os dados que será feito a pesquisa.
+            E a lógica deverá ser implementada conforme os requisitos de pesquisa da página.
+            
+            Anotação do método : [HttpPost("search")]
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DGSoft.Gefinpes.Core.CustomAuthorizeAttribute">
+            <summary>
+            Custom implementation for Authorize access to controller method based on Access control for application
+            </summary>
+        </member>
+        <member name="P:DGSoft.Gefinpes.Core.CustomAuthorizeAttribute.FunctionalityId">
+            <summary>
+            Id for functionality to make validations on access control
+            </summary>
+        </member>
+        <member name="M:DGSoft.Gefinpes.Core.CustomAuthorizeAttribute.OnAuthorization(Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext)">
+            <summary>
+            Valiadate the permissions
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:DGSoft.Gefinpes.Core.IdentityServerConfig">
+            <summary>
+            Class with identity server configuration, to restrict access only for authorized and pre-defined
+            clients
+            </summary>
+        </member>
+        <member name="T:DGSoft.Gefinpes.Jobs.JobScheduller">
+            <summary>
+            Class to configure Schedulled Jobs
+            </summary>
+        </member>
+        <member name="M:DGSoft.Gefinpes.Jobs.JobScheduller.StartJobs">
+            <summary>
+            Job Scheduling
+            </summary>
+        </member>
+        <member name="T:DGSoft.Gefinpes.Jobs.JobSendMessages">
+            <summary>
+            Job to Send messages pending
+            </summary>
+        </member>
+        <member name="M:DGSoft.Gefinpes.Jobs.JobSendMessages.Execute">
+            <summary>
+            Execution to method
+            </summary>
+        </member>
+        <member name="T:DGSoft.Gefinpes.Models.ApiResponse">
+            <summary>
+            Class generic to Sent API response
+            </summary>
+        </member>
+        <member name="M:DGSoft.Gefinpes.Models.ApiResponse.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:DGSoft.Gefinpes.Models.ApiResponse.Data">
+            <summary>
+            Data is the param that returns the objects to be used in front end app. Return a Object or a List of objects
+            </summary>
+        </member>
+        <member name="T:DGSoft.Gefinpes.Models.ApiResponse`1">
+            <summary>
+            Class to Return Typed ApiResponse
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+        </member>
+        <member name="M:DGSoft.Gefinpes.Models.ApiResponse`1.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:DGSoft.Gefinpes.Models.ApiResponse`1.Data">
+            <summary>
+            Data is the param that returns the objects to be used in front end app. Return a Object or a List of objects
+            </summary>
+        </member>
+    </members>
+</doc>

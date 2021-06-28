@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.11.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Crm.Comercial.Domain\Crm.Comercial.Domain.csproj" />
+    <ProjectReference Include="..\Crm.Comercial.Repository\Crm.Comercial.Repository.csproj" />
+    <ProjectReference Include="..\Crm.Comercial.Utility\Crm.Comercial.Utility.csproj" />
+  </ItemGroup>
+
+</Project>
